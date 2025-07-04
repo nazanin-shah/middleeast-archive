@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نقشه بایگانی خاورمیانه</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Scheherazade New', serif;
+      background-color: #f8f8f8;
+      color: #111;
+      direction: rtl;
+    }
+    #map {
+      height: 100vh;
+      filter: grayscale(100%);
+    }
+    .radio-player {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    .info-box {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      border-radius: 10px;
+      width: 250px;
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="radio-player">
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+    </audio>
+  </div>
+  <div class="info-box" id="infoBox">
+    <strong>بغداد</strong>
+    <p>این یک یادداشت آزمایشی برای شهر بغداد است. شامل صدا، عکس و متن در نسخه‌های بعدی خواهد بود.</p>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([33.3152, 44.3661], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '',
+    }).addTo(map);
+
+    const marker = L.marker([33.3152, 44.3661]).addTo(map);
+    marker.on('click', () => {
+      document.getElementById('infoBox').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
