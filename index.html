@@ -1,126 +1,29 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wireframe — Time of Archive</title>
+  <meta charset="UTF-8">
+  <title>نقشه بایگانی خاورمیانه</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Top Bar / Title -->
-  <header class="bar">
-    <div class="title">Time of Archive <span class="sub">/ زمانِ آرشیو</span></div>
-    <div class="date-pill">۱۴۰۴</div>
+  <header>
+    <h1>آرشیو جملات</h1>
+    <div id="archive"></div>
   </header>
 
-  <!-- Word / Search -->
-  <section class="section word">
-    <label class="label">word / کلمه</label>
-    <div class="pill-input"></div>
-  </section>
-
-  <!-- Two columns: Dictionary — Sentences -->
-  <section class="section two-col">
-    <div class="col">
-      <div class="col-title">Dictionary / فرهنگ</div>
-      <div class="dropdown">
-        <div class="arrow"></div>
-        <div class="button">A</div>
-      </div>
-
-      <div class="cards">
-        <div class="card dark"></div>
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line short"></div>
-          <div class="line"></div>
-        </div>
-      </div>
-
-      <div class="cards">
-        <div class="card dark"></div>
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line short"></div>
-          <div class="line"></div>
-        </div>
-      </div>
-
-      <div class="comment">
-        <div class="comment-btn">Comment / یادداشت</div>
-      </div>
+  <main>
+    <div id="map-container">
+      <iframe src="map.html" title="Middle East Map"></iframe>
     </div>
+  </main>
 
-    <div class="divider">—</div>
+  <footer>
+    <audio controls autoplay loop>
+      <source src="radio.mp3" type="audio/mpeg">
+      مرورگر شما از پخش رادیو پشتیبانی نمی‌کند.
+    </audio>
+  </footer>
 
-    <div class="col">
-      <div class="col-title">Sentences / جمله‌ها</div>
-      <div class="chip-row">
-        <div class="chip">subjects</div>
-      </div>
-
-      <div class="cards">
-        <div class="thumb"></div>
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line short"></div>
-        </div>
-      </div>
-
-      <div class="cards">
-        <div class="thumb"></div>
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line short"></div>
-        </div>
-      </div>
-
-      <div class="comment">
-        <div class="comment-btn">Comment / یادداشت</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Map & Timeline sketch -->
-  <section class="section grid-2">
-    <div class="map-box">
-      <div class="tri-row">
-        <div class="tri"></div><div class="tri"></div><div class="tri"></div>
-      </div>
-      <div class="island">
-        <div class="dot big"></div>
-        <div class="dot"></div>
-        <div class="dot ring"></div>
-        <div class="dot"></div>
-      </div>
-      <div class="caption">نقشه خاورمیانه + افغانستان</div>
-    </div>
-
-    <div class="timeline-box">
-      <div class="strips">
-        <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
-        <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
-      </div>
-
-      <div class="network">
-        <div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div>
-        <svg class="links" viewBox="0 0 600 120" preserveAspectRatio="none">
-          <line x1="20" y1="100" x2="140" y2="20"/>
-          <line x1="140" y1="20" x2="260" y2="90"/>
-          <line x1="260" y1="90" x2="380" y2="30"/>
-          <line x1="380" y1="30" x2="500" y2="80"/>
-        </svg>
-      </div>
-
-      <div class="arrows">
-        <div class="arrow-dn"></div><div class="arrow-dn"></div><div class="arrow-dn"></div><div class="arrow-dn"></div>
-        <div class="arrow-dn"></div><div class="arrow-dn"></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="foot">Wireframe only — عناصر خاکستری نشانهٔ جای‌گیر هستند</footer>
+  <script src="script.js"></script>
 </body>
 </html>
