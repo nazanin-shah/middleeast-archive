@@ -3,33 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>نقشه بایگانی خاورمیانه</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <link rel="stylesheet" href="style.css">
-  <style>
-    @font-face {
-      font-family: 'Scheherazade';
-      src: url('assets/scheherazade.woff2') format('woff2');
-    }
-    body { font-family: 'Scheherazade', serif; }
-  </style>
 </head>
-<body dir="rtl">
+<body>
   <header>
     <h1>نقشه بایگانی خاورمیانه</h1>
-  </header>
-  <div id="map"></div>
-  <div id="radio">
     <audio controls autoplay>
-      <source src="https://live.radiopalestine.com/stream" type="audio/mpeg">
-      مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+      <source src="https://live.radiopalestine.net/stream" type="audio/mpeg">
+      مرورگر شما از پخش زنده رادیو پشتیبانی نمی‌کند.
     </audio>
-  </div>
-  <section id="archive">
-    <h2>آرشیو روزانه</h2>
-    <ul id="entries"></ul>
-  </section>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </header>
+
+  <main>
+    <section id="map">
+      <h2>نقشه</h2>
+      <div id="map-container">[نقشه اینجا خواهد بود]</div>
+    </section>
+
+    <section id="archive">
+      <h2>آرشیو روزانه</h2>
+      <div id="entries"></div>
+    </section>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
