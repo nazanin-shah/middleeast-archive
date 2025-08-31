@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background: #fdfdfd;
+  color: #111;
+}
+header {
+  text-align: center;
+  padding: 1rem;
+}
+#map {
+  height: 70vh;
+  width: 100%;
+  filter: grayscale(100%) contrast(120%);
+}
+#radio {
+  margin: 1rem;
+  text-align: center;
+}
+#archive {
+  padding: 1rem;
+}
