@@ -1,15 +1,22 @@
-var map = L.map('map').setView([33.5, 44], 5);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 10,
-  attribution: '© OpenStreetMap'
-}).addTo(map);
-fetch('data/archive.json')
-  .then(res => res.json())
-  .then(data => {
-    const ul = document.getElementById('entries');
-    data.forEach(entry => {
-      let li = document.createElement('li');
-      li.innerHTML = `<b>${entry.date}</b>: ${entry.quotes.join(" / ")}`;
-      ul.appendChild(li);
-    });
+async function loadArchive() {
+  const res = await fetch("data/archive.json");
+  const data = await res.json();
+
+  const container = document.getElementById("entries");
+  container.innerHTML = "";
+
+  data.forEach(entry => {
+    const div = document.createElement("div");
+    div.classList.add("entry");
+
+    div.innerHTML = `
+      <h3>${entry.date}</h3>
+      <ul>
+        ${entry.quotes.map(q => `<li>${q}</li>`).join("")}
+      </ul>
+    `;
+    container.appendChild(div);
   });
+}
+
+loadArchive();
